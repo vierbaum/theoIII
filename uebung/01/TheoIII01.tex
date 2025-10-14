@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath, amsfonts}
+\usepackage{enumerate}
+\input{title.tex}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+	\maketitle
+	\section{}
+	\begin{enumerate}[a)]
+		\item
+            Nach Annahme gilt
+            \begin{align*}
+                &\limsup\limits_{n\rightarrow\infty}
+                \frac{f(n)}{g(n)}<\infty\\
+                &\limsup\limits_{n\rightarrow\infty}
+                \frac{g(n)}{h(n)}<\infty
+            \end{align*}
+            Wir setzen
+            \begin{align*}
+                &A:=\limsup\limits_{n\rightarrow\infty}
+                \frac{f(n)}{g(n)}<\infty\\
+                &B:=\limsup\limits_{n\rightarrow\infty}
+                \frac{g(n)}{h(n)}<\infty
+            \end{align*}
+            Es gilt also
+            \begin{align*}
+                \lim\limits_{n\rightarrow\infty}
+                \sup\frac{f(n)}{g(n)}\cdot\sup\frac{g(n)}{h(n)}
+                &=A\cdot B\\
+                \Leftrightarrow\lim\limits_{n\rightarrow\infty}
+                \sup\left(\frac{f(n)}{g(n)}
+                \cdot\frac{g(n)}{h(n)}\right)
+                &\leq A \cdot B\\
+                \Leftrightarrow\lim\limits_{n\rightarrow\infty}
+                \sup\left(\frac{f(n)}{h(n)}\right)
+                \leq A\cdot B&<\infty\\
+                \Leftrightarrow\limsup\limits_{n\rightarrow\infty}
+                \frac{f(n)}{h(n)}&<\infty\\
+                &\Leftrightarrow
+                f\in
+                O(h)
+            \end{align*}
+        \item
+            Nach Annahme gilt
+            \begin{align*}
+                A:=\limsup\limits_{n\rightarrow\infty}
+                \frac{f_1(n)}{g_1(n)}<\infty\\
+                B:=\limsup\limits_{n\rightarrow\infty}
+                \frac{f_2(n)}{g_2(n)}<\infty
+            \end{align*}
+            \begin{align*}
+                \infty&<A\cdot B\\
+                &=\limsup\limits_{n\rightarrow\infty}\frac{f_1}{g_1}\cdot
+                \limsup\limits_{n\rightarrow\infty}\frac{f_2}{g_2}\\
+                &\leq
+                \limsup\limits_{n\rightarrow\infty}
+                \left(\frac{f_1}{g_1}\cdot\frac{f_2}{g_2}\right)\\
+                &=\limsup\limits_{n\rightarrow\infty}
+                \left(\frac{f_1\cdot f_2}{g_1\cdot g_2}\right)\\
+                &\Leftrightarrow (f_1\cdot f_2)\in O(g_1\cdot g_2)
+            \end{align*}
+    \end{enumerate}
+\end{document}
