@@ -65,6 +65,44 @@
             \end{align*}
     \end{enumerate}
     \section{}
+    \begin{enumerate}[a)]
+        \item
+            Wir definieren zunächst zwei funktionen\\
+            $\phi: \R^+\rightarrow \R, x\mapsto x^k$ für $k\in\R$ fest.\\
+            Weiter formen wir $\phi(x)=x^{m+\alpha}$ mit $m\in\N_0$ und $\alpha\in[0,1)$.\\
+            Sowie $\psi: \R^+\rightarrow \R, x\mapsto a^x$ für $a>1$ fest\\
+            Hierbei gilt $\underset{n\in\N}\forall \frac{n^k}{a^n}=\frac{\phi(n)}{\psi(n)}$.
+            Da $\lim\limits_{x\rightarrow\infty} \phi(x)=\infty$ und
+            $\lim\limits_{x\rightarrow\infty} \psi(x)=\infty$, und beide auf $(0,\infty)$ stetig diff.bar sind,
+            können wir die Regel von L'Hospital anwenden. Also gilt
+            \begin{align*}
+                \lim\limits_{x\rightarrow\infty}\frac{\phi(x)}{\psi(x)}
+                =\lim\limits_{x\rightarrow\infty}\frac{\alpha\cdot m!\cdot x^{\alpha-1}}{\log^{m+1}(a)\cdot a^x}=0
+            \end{align*}
+            Da $\alpha -1<0$ geht $x^{\alpha-1}$ gegen 0.
+            Nach cauchy gilt demnach
+            \begin{equation*}
+                \underset{\varepsilon>0}\forall\,\underset{n_0\in\R}\exists\,
+                \underset{n,m\in\R;n,m\geq n_0}\forall
+                \left|
+                    \frac{\phi(n)}{\psi(n)}-\frac{\phi(m)}{\psi(m)}
+                \right|<\varepsilon
+            \end{equation*}
+            Da $n,m\in\R$ beliebig, formulieren wir um
+            \begin{equation*}
+                \underset{\varepsilon>0}\forall\,\underset{n_0\in\R}\exists\,
+                \underset{n,m\in\N;n,m\geq n_0}\forall
+                \left|
+                    \frac{\phi(n)}{\psi(n)}-\frac{\phi(m)}{\psi(m)}
+                \right|<\varepsilon
+            \end{equation*}
+            Demnach gilt
+            \begin{equation*}
+                \lim\limits_{n\rightarrow\infty}\frac{\phi(n)}{\psi(n)}
+                \lim\limits_{n\rightarrow\infty}\frac{n^k}{a^n}=0
+            \end{equation*}
+            Es folgt also $n^k\in o(a^n)$
+    \end{enumerate}
     \section{}
     \begin{enumerate}[a)]
         \item
