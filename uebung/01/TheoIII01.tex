@@ -3,6 +3,8 @@
 \usepackage{pgfplots}
 \usepackage{amsmath, amsfonts}
 \usepackage{enumerate}
+\usepackage{makecell}
+\usepackage{xypic}
 \input{title.tex}
 
 \newcommand{\N}{\mathbb{N}}
@@ -143,5 +145,104 @@
             \end{align*}
         \item
             $n^{0.4}<\sqrt{n}<n\log n<3n<3^\frac{n}{2}<2^n<n!$
+    \end{enumerate}
+    \section{}
+    \begin{enumerate}[f1)]
+        \item
+            $\Theta(n^2)$
+            \begin{tabular}{cc|cccc}
+                &j&1&2&$\hdots$&n\\
+                i&\\
+                \hline
+                1&&$\times$&$\times$&$\hdots$&$\times$\\
+                2&&$\times$&$\times$&$\hdots$&$\times$\\
+                $\vdots$&\\
+                n&&$\times$&$\times$&$\hdots$&$\times$
+            \end{tabular}
+        \item
+            $\Theta(n^2)$
+            \begin{tabular}{cc|cccc}
+                &j&1&2&$\hdots$&n\\
+                i&\\
+                \hline
+                1&&$\times$&$\times$&$\hdots$&$\times$\\
+                2&&&$\times$&$\hdots$&$\times$\\
+                $\vdots$&&&&$\ddots$&$\vdots$\\
+                n&&&&&$\times$
+            \end{tabular}
+        \item
+            $\Theta(n^2)$
+            \begin{tabular}{cc|cccc}
+                &j&1&2&$\hdots$&n\\
+                i&\\
+                \hline
+                1&&$\times$&\\
+                2&&$\times$&$\times$\\
+                $\vdots$&&$\vdots$&&$\ddots$\\
+                n&&$\times$&$\times$&$\hdots$&$\times$
+            \end{tabular}
+        \item
+            $\Theta(n)$
+            \begin{tabular}{cc|cccc}
+                &j&1&2&$\hdots$&1000\\
+                i&\\
+                \hline
+                1&&$\times$&$\times$&$\hdots$&$\times$\\
+                2&&$\times$&$\times$&$\hdots$&$\times$\\
+                $\vdots$&\\
+                1000n&&$\times$&$\times$&$\hdots$&$\times$
+            \end{tabular}
+        \item
+            $\Theta(n^2)$
+            \begin{tabular}{c|ccccc}
+                &f(1)&f(2)&f(3)&f(4)&f(5)\\
+                \hline
+                f(1)&1&2&3&4&5\\
+                f(2)&&1&2&3&4\\
+                f(3)&&&1&2&3\\
+                f(4)&&&&1&2\\
+                f(5)&&&&&1\\
+            \end{tabular}
+        \item
+            $\Theta(2^n)$\\
+            \xymatrix{
+                &&&&&&f(8)\ar[dlll]\ar[drrr]\\
+                &&&f(4)\ar[dll]\ar[dr]&&&&&&f(4)\ar[dl]\ar[drr]\\
+                &f(2)\ar[dl]\ar[dr]&&&f(2)\ar[dl]\ar[dr]&&&&f(2)\ar[dl]\ar[dr]&&&f(2)\ar[dl]\ar[dr]\\
+                f(1)&&f(1)&f(1)&&f(1)&&f(1)&&f(1)&f(1)&&f(1)
+            }
+        \item
+            $\Theta(\log(n)$
+            \xymatrix{
+                f(8)\ar[r]&f(4)\ar[r]&f(2)\ar[r]&f(1)
+            }
+        \item
+            $\Theta(\log(n)$
+            \xymatrix{
+                f(8)\ar[r]&f(4)\ar[r]&f(2)\ar[r]&f(1)
+            }
+        \item
+            $\Theta(n^2)$
+            \begin{tabular}{c|ccccc}
+                &f(0)&f(1)&f(2)&f(3)&f(4)\\
+                \hline
+                f(0)&1&2&3&4&5\\
+                f(1)&&1&2&3&4\\
+                f(2)&&&1&2&3\\
+                f(3)&&&&1&2\\
+                f(4)&&&&&1\\
+            \end{tabular}
+        \item
+            $\Theta(1)$
+        \item
+            $\Theta(\log(n)$
+            \xymatrix{
+                f(8)\ar[r]&f(4)\ar[r]&f(2)\ar[r]&f(1)
+            }
+        \item
+            $\Theta(\sqrt(n)$
+            \xymatrix{
+                f(3^8)\ar[r]&f(3^4)\ar[r]&f(3^2)\ar[r]&f(3)
+            }
     \end{enumerate}
 \end{document}
