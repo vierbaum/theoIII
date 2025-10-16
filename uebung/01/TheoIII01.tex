@@ -102,6 +102,29 @@
                 \lim\limits_{n\rightarrow\infty}\frac{n^k}{a^n}=0
             \end{equation*}
             Es folgt also $n^k\in o(a^n)$
+        \item
+            Ähnlich wie bei a) definieren wir auch wieder funktionen\\
+            $\phi: \R^+\rightarrow \R, x\mapsto \log^r(x)$ für $r\in\R$ fest.\\
+            Weiter formen wir $\phi(x)=log^{m+\alpha}(x)$ mit $m\in\N_0$ und $\alpha\in[0,1)$.\\
+            Sowie $\psi: \R^+\rightarrow \R, n^l$ für $a>1$ fest.\\
+            Es gilt also
+            \begin{align*}
+                \lim\limits_{x\rightarrow\infty}
+                \frac{\phi}{\psi}
+                &=
+                \lim\limits_{x\rightarrow\infty}
+                \frac{\log^{m+\alpha}(x)}{x^l}\\
+                &=
+                \lim\limits_{x\rightarrow\infty}
+                \frac{m!\log^{\alpha}(x)}{l^m\cdot x^l}\\
+                &=
+                \lim\limits_{x\rightarrow\infty}
+                \frac{\alpha\cdot m!\log^{\alpha-1}(x)}{l^{m+1}\cdot x^l}=0\\
+            \end{align*}
+            Ebenfalls können wir wie bei a demnach zeigen, dass mittels cauchy
+            auch die folge $\left(\frac{\phi(n)}{\psi(n)}\right)_{n\in\N}$
+            gegen 0 konvergiert. Demnach gilt
+            $\log^r(n)\in o(n^l)$
     \end{enumerate}
     \section{}
     \begin{enumerate}[a)]
