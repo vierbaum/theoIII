@@ -69,7 +69,9 @@
     \section{}
     \begin{enumerate}[a)]
         \item
-            Wir definieren zunächst zwei funktionen\\
+            Da $a^n$ und $n^k$ Abbildungen von $\N$ sind und demnach nicht stetig
+            sind, können wir Die Regel von L'Hospital nicht verwenden.
+            Demnach definieren wir zunächst zwei funktionen\\
             $\phi: \R^+\rightarrow \R, x\mapsto x^k$ für $k\in\R$ fest.\\
             Weiter formen wir $\phi(x)=x^{m+\alpha}$ mit $m\in\N_0$ und $\alpha\in[0,1)$.\\
             Sowie $\psi: \R^+\rightarrow \R, x\mapsto a^x$ für $a>1$ fest\\
@@ -100,7 +102,7 @@
             \end{equation*}
             Demnach gilt
             \begin{equation*}
-                \lim\limits_{n\rightarrow\infty}\frac{\phi(n)}{\psi(n)}
+                \lim\limits_{n\rightarrow\infty}\frac{\phi(n)}{\psi(n)}=
                 \lim\limits_{n\rightarrow\infty}\frac{n^k}{a^n}=0
             \end{equation*}
             Es folgt also $n^k\in o(a^n)$
@@ -193,16 +195,16 @@
                 1000n&&$\times$&$\times$&$\hdots$&$\times$
             \end{tabular}
         \item
-            $\Theta(n^2)$
-            \begin{tabular}{c|ccccc}
-                &f(1)&f(2)&f(3)&f(4)&f(5)\\
-                \hline
-                f(1)&1&2&3&4&5\\
-                f(2)&&1&2&3&4\\
-                f(3)&&&1&2&3\\
-                f(4)&&&&1&2\\
-                f(5)&&&&&1\\
-            \end{tabular}
+            $\Theta(2^n)$
+            Genau $2^{n-1}$ Aufrufe:
+            IA:
+            \begin{align*}
+                |f5(1)|=1=2^{1-1}
+            \end{align*}
+            IS:
+            \begin{align*}
+                |f5(n+1)|=|f5(n)|+|f5(n)|=2^{n-1}+2^{n-1}=2^{(n-1)+1}
+            \end{align*}
         \item
             $\Theta(2^n)$\\
             \xymatrix{
@@ -235,14 +237,11 @@
         \item
             $\Theta(1)$
         \item
-            $\Theta(\log(n)$
+            $\Theta(\log(n))$
             \xymatrix{
                 f(8)\ar[r]&f(4)\ar[r]&f(2)\ar[r]&f(1)
             }
         \item
-            $\Theta(\sqrt(n)$
-            \xymatrix{
-                f(3^8)\ar[r]&f(3^4)\ar[r]&f(3^2)\ar[r]&f(3)
-            }
+            $\Theta(\log\log(n))$
     \end{enumerate}
 \end{document}
