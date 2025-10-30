@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath, amsfonts}
+\usepackage{enumerate}
+\usepackage{makecell}
+\usepackage{xypic}
+\input{title.tex}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+	\maketitle
+	\section{}
+	\begin{enumerate}[a)]
+		\item
+		\item
+		    Wir wissen, dass $\log x$ auf $x>0$ monoton
+			steigt.
+			Demnach gilt
+			\begin{equation*}
+				\sum_{i=1}^n \log i\leq
+				\sum_{i=1}^n \log n=n\log n
+            \end{equation*}
+            Weiter ist
+            \begin{align*}
+                \limsup\limits_{n\in\N^+}
+                \frac{\sum_{i=1}^n\log i}{n\log n}
+                \leq
+                \limsup\limits_{n\in\N^+}
+                \frac{n\log n}{n\log n}
+                =1<\infty
+            \end{align*}
+            Es gilt
+            \begin{equation*}
+                \sum_{i=1}^n \log i\in O(n\log n)
+            \end{equation*}
+
+            Es gilt $0<\log k<\log n(1<k<n)$ und demnach
+            gilt
+            \begin{equation*}
+                \underset{k<n\in\N^+}\forall\,
+                \underset{a>1}\exists
+                a\log(k)=\log(n)
+            \end{equation*}
+            Wir definieren $a_k$ mit
+            \begin{equation*}
+                a_k = \frac{\log n}{\log k}.
+            \end{equation*}
+            Somit gilt
+            \begin{align*}
+                \liminf\limits_{n\in\N^+}
+                \frac{\sum_{i=1}^n\log i}{n\log n}
+                &=
+                \liminf\limits_{n\in\N^+}
+                \frac{1\cdot\log n+a_{n-1}\log n+\hdots+a_1\log n}{\log n}\\
+                &=
+                \liminf\limits_{n\in\N^+}
+                \frac{\log n(1+a_{n-1}+\hdots+a_1)}{n\log n}\\
+                &=
+                \liminf\limits_{n\in\N^+}
+                \frac{1+a_{n-1}+\hdots+a_1}{n}\\
+                &\geq
+                \liminf\limits_{n\in\N^+}
+                \frac{\sum_{k=1}^n 1}{n}\\
+                &=1>0
+            \end{align*}
+            Demnach gilt $\sum_{i=1}^n\log i\in\Omega(n\log n)$
+            und $\sum_{i=1}^n\log i\in\Theta(n\log n)$
+    \end{enumerate}
+\end{document}
