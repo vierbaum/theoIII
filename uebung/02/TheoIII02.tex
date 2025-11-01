@@ -68,4 +68,41 @@
             Demnach gilt $\sum_{i=1}^n\log i\in\Omega(n\log n)$
             und $\sum_{i=1}^n\log i\in\Theta(n\log n)$
     \end{enumerate}
+    \section{}
+    \xymatrix{
+        &&&&1\ar[dll]\ar[drr]\\
+        &&2\ar[dl]\ar[dr]&&&&3\ar[dl]\ar[dr]\\
+        &4\ar[dl]\ar[dr]&&5&&6&&7\\
+        \vdots&&\ddots
+    }
+    Dann gilt für knoten $n$, die linke kante $(n,2n)$
+    und die rechte $(n,2n+1)$
+    und für beliebigen knoten $m$ der
+    $k$ mal rechts von $n$ liegt ist
+    $m=2^k+\sum_{i=0}^{k-1}2^i$
+    Somit ist
+    Also ist für beliebigen knoten $n$ links-rechts-$\hdots$
+    $=A_n=\{(n,2n),(2n\cdot \left[2^k+\sum_{i=0}^{k-1}2^i\right],2n\cdot \left[2^{k+1}+\sum_{i=0}^{k}2^i)\right]|k>1\}$
+    Wir nehmen an, es existieren $n\neq m$ mit
+    $A_n\cap A_m\neq\emptyset$.
+    Dann gilt
+    \begin{align*}
+    	&\{(n,2n),(2n\cdot \left[2^k+\sum_{i=0}^{k-1}2^i\right],2n\cdot \left[2^{k+1}+\sum_{i=0}^{k}2^i)\right]|k>1\}\\
+    	\cap&\{(m,2m),(2m\cdot \left[2^k+\sum_{i=0}^{k-1}2^i\right],2m\cdot \left[2^{k+1}+\sum_{i=0}^{k}2^i)\right]|k>1\}\neq\emptyset\\
+        \Leftrightarrow&\underset{j,k>1}\exists:
+        2n\cdot \left[2^k+\sum_{i=0}^{k-1}2^i\right]
+        =2m\cdot \left[2^j+\sum_{i=0}^{j-1}2^i\right]\\
+        \Leftrightarrow&\underset{j,k>1}\exists:
+        \frac{n}{m}\cdot \left[2^k+\sum_{i=0}^{k-1}2^i\right]
+        =\left[2^j+\sum_{i=0}^{j-1}2^i\right]\tag 1\\
+        \Leftrightarrow&\underset{j,k>1}\exists:
+        \left[2^k+\sum_{i=0}^{k-1}2^i\right]
+        =\frac{m}{n}\cdot \left[2^j+\sum_{i=0}^{j-1}2^i\right]\tag 2\\
+    \end{align*}
+    Da die summen ganzzahlig sind, folgt aus (1) $m$ tilt
+    $n$ und aus $2$ folgt $n$ teilt $m$, also
+    ist $n=m$, das ist ein widerspruch zur annahme
+
+    Ist bspw. links-links-rechts-rechts-$hdots$
+    ist $A_1\cap A_2=\{(2,4)\}$
 \end{document}
