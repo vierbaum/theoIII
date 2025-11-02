@@ -105,4 +105,35 @@
 
     Ist bspw. links-links-rechts-rechts-$hdots$
     ist $A_1\cap A_2=\{(2,4)\}$
+    \section{}
+    \section{}
+    \paragraph{Reflexivität}
+    Da der Pfad von $a$ nach $a$ existiert
+    ist $aRa$
+    \paragraph{Symmetrie}
+    ist $aRb$ existiert ein pfad von $a$ nach $b$
+    und von $b$ nach $a$
+    also gilt  $bRa$
+    \paragraph{Transitivität}
+    Seien $a,b,c$ 3 Knoten mit
+    $aRb$ und $bRc$.
+    Also existieren ein Pfade
+    $\pi_0=a\hdots b,\pi_1=b\hdots c$.
+    Demnach existieren Pfade $\pi_3=\pi_0\pi_1=a\hdots c,
+    \pi_3'=c\hdots a$ und es ist $aRc$ also
+    ist $R$ eine Äquivalenzrelation.
+
+    ist $a\rightarrow b$, so gilt
+    $\underset{u\in[a]}u\rightarrow b$ da $u\rightarrow a\rightarrow b$
+    ist nun $a\rightarrow b\rightarrow c$, gilt
+    $\underset{u\in[a]\cup[b]}u\rightarrow b$
+    und ist $a\rightarrow b\rightarrow c\rightarrow a$, gilt
+    $\underset{u\in[a]\cup[b]\cup[c]}u\rightarrow a\land a\rightarrow u$,
+    denn ist
+    \begin{enumerate}
+        \item $u\in[a]\Leftrightarrow a\sim u$,
+        \item $u\in[b]\Leftrightarrow a\rightarrow b\rightarrow u(u\sim b)$
+        \item $u\in[c]\Leftrightarrow a\rightarrow b\rightarrow c\rightarrow u(u\sim c)$
+    \end{enumerate}
+    Demnach gilt $u\sim a$, $a\sim b\sim c$ und $[a]=[b]=[c]$
 \end{document}
