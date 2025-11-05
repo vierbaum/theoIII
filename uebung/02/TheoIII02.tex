@@ -106,6 +106,28 @@
     Ist bspw. links-links-rechts-rechts-$hdots$
     ist $A_1\cap A_2=\{(2,4)\}$
     \section{}
+    \paragraph{Adjazenzmatrix}
+    $|V|\times|V|$ Matrix wobei
+    $M_{uv}$ angibt, ob es eine kante $(u,v)$ gibt.
+
+    Gibt es eine Kante $(u,v):O(1)$
+
+    Über Kanten iterieren: $O(|V|)$
+    \paragraph{Inzidenzmatrix}
+    $|V|\times |E|$ Matrix,
+
+    wobei $M_{ux}=1\Leftrightarrow$ Knoten $u$ ist teil von Kante $x$
+
+    Gibt es eine Kante $(u,v):O(|E|)$
+
+    Über Kanten iterieren: $O(|E|)$
+    \paragraph{Adjazenzliste}
+    Jedem Knoten $u$ wird eine Meinge an Nachbarn
+    zugewiesen mit $\{v\in V|(u,v)\in E\}$
+
+    Gibt es eine Kante $(u,v):O(|V|)$
+
+    Über Kanten iterieren: $O(|V|)$
     \section{}
     \paragraph{Reflexivität}
     Da der Pfad von $a$ nach $a$ existiert
