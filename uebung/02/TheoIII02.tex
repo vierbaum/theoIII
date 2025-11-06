@@ -14,6 +14,27 @@
 	\section{}
 	\begin{enumerate}[a)]
 		\item
+		    Wir weisen dem Knoten $v$ den
+			Wert $v'$ zu.
+			Sei $C$ die Kinder von $v$.
+			prüfe, ob $c:=\min C<v'$,
+			ist dies der fall, so tausche
+			die Werte von $c$ und $v$.
+			Wiederhole mit $c$.
+			Hierbei gibt es im worst case (ändern der Wurzel)
+			so viele wechsel, wie der Heap hoch ist.
+
+			Wir wollen den Knoten $v$ Löschen.
+			Sei $C$ die Kinder von $v$ und $s$ der
+			Vater von $v$.
+			und $c:=\min C$
+			mit $C'$ den Kindern von $c$.
+			nun löschen wir $v$, setzen
+			$c$ als Kinde von $s$ und
+			definieren die Kinder von $c$ neu
+			als $C\setminus\{c\}\cup C'$.
+			Diese Operation ist in konstanter Zeit
+			umzusetzen.
 		\item
 		    Wir wissen, dass $\log x$ auf $x>0$ monoton
 			steigt.
