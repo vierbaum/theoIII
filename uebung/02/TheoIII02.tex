@@ -14,27 +14,59 @@
 	\section{}
 	\begin{enumerate}[a)]
 		\item
-		    Wir weisen dem Knoten $v$ den
-			Wert $v'$ zu.
-			Sei $C$ die Kinder von $v$.
-			prüfe, ob $c:=\min C<v'$,
-			ist dies der fall, so tausche
-			die Werte von $c$ und $v$.
-			Wiederhole mit $c$.
-			Hierbei gibt es im worst case (ändern der Wurzel)
-			so viele wechsel, wie der Heap hoch ist.
-
-			Wir wollen den Knoten $v$ Löschen.
-			Sei $C$ die Kinder von $v$ und $s$ der
-			Vater von $v$.
-			und $c:=\min C$
-			mit $C'$ den Kindern von $c$.
-			nun löschen wir $v$, setzen
-			$c$ als Kinde von $s$ und
-			definieren die Kinder von $c$ neu
-			als $C\setminus\{c\}\cup C'$.
-			Diese Operation ist in konstanter Zeit
-			umzusetzen.
+		    Für diese Aufgabe nehmen wir an, dass der Index $i$
+			des zu ändernden bzw zu löschenden Elements gegeben ist.
+			Ist nur der Wert gegeben, ist Suche von linearer Laufzeit
+			anzuwenden.
+			Unter der Annahme, dass wir auf einem Min-Heap arbeiten ist
+			\begin{itemize}
+				\item
+				    \textbf{Wert ändern:}\\
+					Um den Wert des Elements mit Index $i$ auf $w$ zu ändern
+					gehen wir for wie folgt:
+					\begin{enumerate}[1.]
+						\item
+    						Aktualisieren: wir weisen dem Element mit index $i$ den wert $w$ zu.
+						\item
+    						Heap-Eigenschaft wiederherstellen: Da die Änderung die Heap-Eigenschaft verletzen könnte.
+						    Wir betrachten folgende Fälle:
+							\begin{enumerate}[\text{Fall} 1:]
+								\item
+    								$w <$ ursprünglicher wert. Wir führen einen sog. ``Bubble up'' durch.
+                                    \begin{enumerate}[1]
+                                        \item Vergleiche A[$i$] mit Vater A[parent($i$)]
+                                        \item ist A[$i$] $<$ A[parent($i$)], tausche A[$i$], A[parent($i$)]
+                                        \item Wiederhole, bis 2 nicht mehr gilt
+                                    \end{enumerate}
+								\item
+    								$w >$ ursprünglicher wert. Wir führen einen sog. ``Bubble down'' durch.
+                                    \begin{enumerate}[1]
+                                        \item Vergleiche A[$i$] mit Kindern A[leftchildr$(i)$],  A[rightchild$(i)$]
+                                        \item finde das Kleinste kind $m:=\min\{A[\text{leftchildr}(i)],  A[\text{rightchild}(i)]\}$
+                                        \item ist $m < w$, tausche $A[i]$, mit dem Kleinsten Kind.
+                                        \item Wiederhole, bis 3 nicht mehr gilt
+                                    \end{enumerate}
+							\end{enumerate}
+                    \end{enumerate}
+                    Laufzeit: Sowohl bei bubble up, wie auch bei bubble down gibt es maximal so viele vertauschungen, wie der Baum
+                    hoch ist. Demnach ist Wert ändern unter Annahmen, dass der Index des Wertes vorher bekannt ist in $\log(n)$.
+                \item
+                    \textbf{Element Löschen}
+                    \begin{enumerate}[1.]
+                        \item
+                            Tauschen: Wir Nehmen das letzte Element im Heap (Visuell rechts auf der Untersten ebene)
+                            mit Index $k$ und setzen $A[i]:=A[k]$
+                        \item
+                            Entfernen: Wir verkleinern den Heap um 1. So entfernen wir das Element $A[k]$
+                        \item
+                            Heap-Eigenschaft wiederherstellen: Das neue Element bei $A[i]$ könnte die
+                            Heap-Eigenschaft verletzen. Wir prüfen wie bei Wert ändern beschrieben, ob
+                            Sift-up bzw. Sift-down notwendig sind und führen diese durch.
+                    \end{enumerate}
+                    Laufzeit: Diese Operation besteht aus einem Tausch ($O(1)$), einer Verringerung der Größe des Heaps
+                    ($O(1)$) und einem Sift-up oder einem Sift-down ($O(\log n)$). Demnach ist Element löschen
+                    in $O(\log n)$
+            \end{itemize}
 		\item
 		    Wir wissen, dass $\log x$ auf $x>0$ monoton
 			steigt.
