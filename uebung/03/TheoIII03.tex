@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath, amsfonts}
+\usepackage{enumerate}
+\usepackage{makecell}
+\usepackage{xypic}
+\input{title.tex}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+    \maketitle
+    \section{}
+    \paragraph{``$\Rightarrow$''}
+    Sei $D$ ein Distanzvektor, dann gilt
+    \begin{enumerate}
+        \item $D_1=d(1)=0$
+        \item
+            Wir definieren $\pi_m$ als kürzesten Weg
+            $1\rightarrow m$ für alle $m\in V\setminus\{1\}$.
+            Sei $\pi_j=\pi_{j'}\circ j$
+            \begin{enumerate}[i)]
+                \item Ist $i=j'$, gilt
+                    $d(j)=d(j')+\gamma(j',j)$
+                \item Ist $i\neq j'$, so existiert
+                    $\pi'_j=\pi_i\circ j$ und
+                    $d(j)\leq d(i)+\gamma(i, j)$
+            \end{enumerate}
+        \item
+            Wir nutzen die Definition von $\pi_m$ aus 2.
+            Es ist also ein $j\neq 1\in V$ beliebig,
+            so existiert ein $\pi_j=\pi_{i}\circ j$
+            mit $d(j)=d(i)+\gamma(i, j)$
+    \end{enumerate}
+    \paragraph{``$\Leftarrow$''}
+    Es gelten $1,2,3$, dann gilt $D_v\geq d(v)$.
+    Ebenso gilt
+    \begin{align*}
+        D_v&\leq D_{v^n}+\gamma(v^n,v)\\
+        &\leq D_{v^{n-1}}+\gamma(v^{n-1}, v^n)\gamma(v^n,v)\\
+        &\vdots\\
+        &\leq D_1+\gamma(1,v^1)+\hdots+\gamma(v^n,v)\\
+        &=0+\gamma(1,v^1)+\hdots+\gamma(v^n,v)\\
+        &=d(v)
+    \end{align*}
+    Es ist $d(v)\leq D_v\leq d(v)\Leftrightarrow
+    D_v=d(v)\Rightarrow$ D ist ein Distanzvektor
+\end{document}
