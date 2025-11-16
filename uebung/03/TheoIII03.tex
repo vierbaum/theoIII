@@ -5,6 +5,7 @@
 \usepackage{enumerate}
 \usepackage{makecell}
 \usepackage{xypic}
+\usepackage{fancyvrb}
 \input{title.tex}
 
 \newcommand{\N}{\mathbb{N}}
@@ -46,4 +47,42 @@
     \end{align*}
     Es ist $d(v)\leq D_v\leq d(v)\Leftrightarrow
     D_v=d(v)\Rightarrow$ D ist ein Distanzvektor
+    \section{}
+    \begin{enumerate}[a)]
+        \item
+            Wir konstruieren mit dem Algorithmus 2.2.2 einen
+            Baum $(V, E')$, wobei
+            \DefineShortVerb{\|}
+            \SaveVerb{VerbA}|compnum|
+            \SaveVerb{VerbB}|compnum[i],compnum[j]|
+            \begin{align*}
+                \underset{(i,j)\in E\land (i,j)\in E}{\exists}
+                &\left(\UseVerb{VerbA}^{-1}\left(
+                    \min\{\UseVerb{VerbB}\}
+                \right), j\right)\in E'\land\\
+                &\left(\UseVerb{VerbA}^{-1}\left(
+                    \max\{\UseVerb{VerbB}\}
+                \right), j\right)\notin E'
+            \end{align*}
+            Es gilt also
+            \begin{align*}
+                \underset{(u,v)\in E;\notin E'}\forall
+                \underset{u'\in V;(u',v)\in E'}\exists
+                \UseVerb{VerbA}[u]
+                \leq\UseVerb{VerbA}[u']
+            \end{align*}
+            Daraus folgt, ist $\phi$ für $(V,E)$ eine
+            Topologische Sortierung, so auch für $(V,E')$
+            Es gilt
+            \begin{align*}
+                \underset{(u,v)\in E'}\forall
+                \UseVerb{VerbA}[v]\leq\UseVerb{VerbA}[u]
+            \end{align*}
+            Weiter ist also
+            \begin{align*}
+                \phi(v)
+                =n+1-\UseVerb{VerbA}[v]
+                \geq n+1-\UseVerb{VerbA}[u]=\phi(u)
+            \end{align*}
+    \end{enumerate}
 \end{document}
