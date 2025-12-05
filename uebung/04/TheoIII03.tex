@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath, amsfonts}
+\usepackage{enumerate}
+\usepackage{makecell}
+\usepackage{xypic}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\input{title.tex}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+    \maketitle
+    \section{}
+    \section{}
+    \begin{enumerate}[a)]
+        \item
+            Wir zeigen CSP $\leq_p$ Rucksack.
+            Wir nehmen einen Rucksack mit gegenständen $I=\{1,\hdots,n\}$,
+            einer Wertefunktion $w:I\rightarrow \N$ und einer
+            Gewichtefunktion $g:I\rightarrow \N$.
+            Ebenso gibt es ein Maximalgewicht $\mathbb G\in\N$.
+            Anhand dieses Rucksacks konstruieren wir
+
+            \begin{itemize}
+                \item einen Graph $G(V, E)$
+                    mit $V=\{v_1,\hdots v_n\}$
+                    und $E=\{v_i,v_j\}_{i>j\in I}$,
+                    Damit wird sichergestellt, dass jeder Knoten nur
+                    einmal besucht werden kann.
+                    $v_1$ ist Start- und $v_n$ Endknoten.
+                \item eine Recoursefunktion $r:E\rightarrow R^+$
+                    mit $r(v_i)=g(i)$ für $v_i\in V$
+                \item eine Kostenfunktion
+                    $c(v_i)=-w(i)$ für $v_i\in V$
+                \item Eine Maximalresource $R=\mathbb G$
+            \end{itemize}
+            Wenn wir nun Annahmen, dass CSP nicht NP-Schwer ist, dann Lösen wir
+            CSP für den in Linearer zeit Konstruierten Graph und erhalten
+            einen Pfad $\pi$ mit
+            $\sum_{e\in\pi} c(e)$ minimal und $\sum_{e\in\pi}r(e)\leq R$.
+            Somit haben wir Elemente $I'=\{i|v_i\in e\}\subseteq I$
+            mit
+            $\sum_{i\in I'} w(i)$ maximal und $\sum_{i\in I'}g(i)\leq G$
+            die das Rucksackproblem in Polynomischer lösen. Da Rucksack
+            aber NP-hart ist, liegt hier ein Widerspruch zur Annahme vor.
+        \newpage
+        \item
+        \begin{lstlisting}[mathescape=true]
+func CSP( graph G(V, E) , source , destination , R) {
+    // this holds the shortest from the source to
+    // node v with constraint $\leq R$ with all initially at $\infty$
+    for $v\in V, r\leq R$ {
+        min_distange[$v$][$r$] := $\infty$;
+        min_distange[source][0] := 0;
+    }
+    // iterating over all constraints
+    for $k\in \{0,\hdots,R\}$ {
+        for $u \in V$ {
+        // checking if $u$ is reachable
+            if ( min_distange[$u$][$k$] < $\infty$) {
+                // checking all outgoing vertices
+                for each outgoing edge v {
+                    weight := $w(u , v)$;
+                    // reassign if lower
+                    if $(k + weight \leq R)$ {
+                    min_distange[v][k+weight] = min(
+                        min_distange[v][k+weight],
+                        min_distange[u][k] + weight
+                    );
+                }
+            }
+        }
+    }
+    // checking shortest path for all constraints
+    result := $\infty$
+    for $k\in\{0,\hdots, R\}$ {
+        result = min(result, min_distange[target][k]);
+    }
+    if (result = $\infty$) {
+        return NO PATH FOUND;
+    }
+    else {
+        return result;
+    }
+}
+        \end{lstlisting}
+    \end{enumerate}
+\end{document}
