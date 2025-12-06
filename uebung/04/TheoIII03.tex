@@ -14,6 +14,39 @@
 \begin{document}
     \maketitle
     \section{}
+    \begin{enumerate}[a)]
+        \item
+            Wir nehmen die ersten $k$ gegenstände, sodass
+            \begin{equation*}
+                \sum_{j=1}^{k}w_j<W,
+                \sum_{j=1}^{k}w_j+xw_{k+1}=W,
+            \end{equation*}
+            Dann ist $K:=\{(1, j)_{j\leq k}, (x, k+1)\}$ Die Optimale Lösung, Beweis:
+            Wir teilen das element $k+1$ in zwei auf, sodass $\tilde{I}=\{1,\hdots,n+1\}$,
+            wir wählen $\tilde{w}_{k+1}$ so, dass $\sum_{j=1}^{k+1}\tilde{w}_j=W$,
+            $\tilde{w}_{k+2}=w_{k+1}-\tilde{w}_{k+1}$. $\tilde{c}(k+i)_{i\in\{1,2\}}=c(k+i)\frac{\tilde{w}_{k+i}}{w_{k+1}}$
+            Wir representieren unsere Lösung
+            \begin{equation*}
+                F:=(\underbrace{1,\hdots,1}_{k+1},0,\hdots,0).
+            \end{equation*}
+
+
+            Sei eine Lösung $K'\in [0,1]^{n+1}\neq K$ optimal, bei der wir nur ein Element aus $K$, an der stelle $j$
+            (anteilig) ersetzen.
+            So gilt
+            \begin{align*}
+                \sum_i c(i)&<\sum_i c(i)K_i\\
+                (1-K_j)\cdot c(j)&<\sum_{i=k+2}^n c(i)K_i
+            \end{align*}
+            Wir wissen, dass $\sum_{i}w_i=\sum_{i}w_i K_i$.
+            Es ist also
+            \begin{align*}
+                (1-K_j)\cdot c(j)&<(1-K_j)c(k+2)
+            \end{align*}
+            Da aber $j<k+2$ ist dies Ein Widerspruch, es gibt keine bessere Lösung, bei der nur ein ELement aus $K$ entnommen wird.
+            Für $k=n+1$ entnehme zunächst die Differenz für $n$ gegenstände, dann gibt es einen neuen Rucksack mit angepasstem $W$.
+            Nun entnehme genau ein Element.
+    \end{enumerate}
     \section{}
     \begin{enumerate}[a)]
         \item
