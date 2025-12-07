@@ -46,6 +46,28 @@
             Da aber $j<k+2$ ist dies Ein Widerspruch, es gibt keine bessere Lösung, bei der nur ein ELement aus $K$ entnommen wird.
             Für $k=n+1$ entnehme zunächst die Differenz für $n$ gegenstände, dann gibt es einen neuen Rucksack mit angepasstem $W$.
             Nun entnehme genau ein Element.
+        \item
+        \item
+            \begin{itemize}
+                \item
+                    Wir nehmen
+                    \begin{align*}
+                        w_1=\frac{1}{k},&c(1)=1,&\frac{c(1)}{w_1}=k,\\
+                        w_2=W,&c(2)=W\cdot(k-1),&\frac{c(2)}{w(2)}=k-1\\
+                    \end{align*}
+                    somit ist $K=\{2\},\tilde{K}=\{1\}$,
+                    \begin{equation*}
+                        \sum_{k\in\tilde{K}}c(k)=1
+                        \sum_{k\in K}c(k)=W\cdot (k-1)
+                    \end{equation*}
+                \item
+                    Wir nehmen $W_1=W,c(1)=1.1$, $w_k=\frac{1}{n},c(k)=1$
+                    Somit ist $K=\{2,\hdots,n\},\tilde{K}=\{1\}$ und
+                    \begin{equation*}
+                        \sum_{k\in\tilde{K}}c(k)=1.1
+                        \sum_{k\in K}c(k)=n-1
+                    \end{equation*}
+            \end{itemize}
     \end{enumerate}
     \section{}
     \begin{enumerate}[a)]
