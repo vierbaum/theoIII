@@ -142,5 +142,29 @@ func CSP( graph G(V, E) , source , destination , R) {
     }
 }
         \end{lstlisting}
+\section{}
+\section{}
+Wir nehmen die Matrix $A=$
+\begin{tabular}{c|cccccc}
+	w/I&0&1&$\hdots$&$i$&$\hdots$&$n$\\
+	\hline
+	0\\
+	1\\
+	$\vdots$\\
+	$W$\\
+\end{tabular}
+
+Dabei ist $A_{i,0}=A_{0,w}=0$ und für $i,w\geq 1$
+\begin{lstlisting}[mathescape=true]
+$A_{i,w}$:
+if $\exists w_k=w$ {
+    $c_\text{max}:=\underset{\{k|w_k=w\}}\max c(k)$;
+    $A_{i,j}:=\underset{j<w\\j\neq \frac{w}{2}}\max\{c_\text{max},A_{i,j},A_{i,j}+ A_{i,6-j}\}$
+}
+else {
+    $A_{i,j}:=\underset{j<w\\j\neq \frac{w}{2}}\max\{A_{i,j},A_{i,j}+ A_{i,6-j}\}$
+}
+\end{lstlisting}
+$A_{i,w}=A_{i,w-1}+c(i)$
     \end{enumerate}
 \end{document}
