@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath, amsfonts}
+\usepackage{enumerate}
+\usepackage{makecell}
+\usepackage{xypic}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\input{title.tex}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+    \maketitle
+    \section{}
+    Wir zeigen zunächst, dass die Harmonische
+    Reihe $H_n$ in $O(\log n)$ liegt.
+    Dafür definieren wir die Ableitung der Harmonischen
+    Reihe. Da Jeder punkt der Harmonischen Reihe
+    2 Steigungen zum vorherigen / nächsten Punkt hat,
+    wählen wir das Maximum der Beiden $(H_n)':=\frac{1}{n}$.
+    Es ist also
+    \begin{align*}
+        0\leq\lim\limits_{n\rightarrow\infty}
+        \frac{H_n}{\log n}&\leq
+        \lim\limits_{n\rightarrow\infty}
+        \frac{\frac{1}{n}}{\frac{1}{n}}=1\\
+    \end{align*}
+    Demnach ist $H_n\in O(\log n)$
+
+    \begin{tabular}{cc}
+        Zug&Wkeit\\
+        1&1\\
+        1&$\frac{1}{2}$\\
+        $\hdots$\\
+        n&$\frac{1}{n}$
+    \end{tabular}
+
+    Demnach ist $E=H_n\in O(\log n)$
+\end{document}
